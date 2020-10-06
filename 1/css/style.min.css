@@ -1527,10 +1527,10 @@ img {
 
 @keyframes FadeIn {
   0% {
-    top: 30px;
+    top: 3rem;
     opacity: 0; }
   100% {
-    top: 0px;
+    top: 0;
     opacity: 1; } }
 
 .intro {
@@ -1880,25 +1880,29 @@ img {
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em; }
-    .page-header__menu a::after {
+    .page-header__menu a::after, .page-header__menu a::before {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 0%;
       height: 2px;
       background-color: #ffffff;
-      display: block;
-      left: 0; }
+      display: block; }
       @media (max-width: 1024px) and (orientation: portrait) {
-        .page-header__menu a::after {
+        .page-header__menu a::after, .page-header__menu a::before {
           left: 0;
           right: 0;
           background-color: #5f458c; } }
       @media (max-width: 768px) and (orientation: landscape) {
-        .page-header__menu a::after {
+        .page-header__menu a::after, .page-header__menu a::before {
           left: 0;
           right: 0;
           background-color: #5f458c; } }
+    .page-header__menu a::after {
+      width: 0%;
+      left: 0; }
+    .page-header__menu a::before {
+      width: 0%;
+      right: 0; }
     .page-header__menu a.active::after {
       width: 100%; }
     .page-header__menu a:hover, .page-header__menu a:focus {
@@ -1910,6 +1914,12 @@ img {
         background-color: #a67ee5;
         transition: width 0.3s ease-out;
         width: 100%; }
+      .page-header__menu a:hover::before, .page-header__menu a:focus::before {
+        width: 100%;
+        transition: width 0.01s ease-out 0.3s; }
+    .page-header__menu a:not(:hover)::before {
+      transition: width 0.3s ease-out;
+      width: 0%; }
 
 .page-header__social {
   margin-left: 4.8rem; }
@@ -2901,10 +2911,10 @@ img {
 
 @keyframes FadeInLeftToRight {
   0% {
-    right: -30px;
+    right: -3rem;
     opacity: 0; }
   100% {
-    right: 0px;
+    right: 0;
     opacity: 1; } }
 
 .slider {
