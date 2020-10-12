@@ -3024,23 +3024,19 @@ body.loaded .screen__footer {
 
 @keyframes RollSliderControlPrev {
   0% {
-    transform: rotate(0deg);
-    opacity: 0;
-    left: -5rem; }
+    transform: translate3d(-5rem, 0, 0) rotate(0);
+    opacity: 0; }
   100% {
-    transform: rotate(360deg);
-    opacity: 1;
-    left: 0rem; } }
+    transform: translate3d(0rem, 0, 0) rotate(360deg);
+    opacity: 1; } }
 
 @keyframes RollSliderControlNext {
   0% {
-    transform: rotate(360deg);
-    opacity: 0;
-    left: 5rem; }
+    transform: translate3d(5rem, 0, 0) rotate(360deg);
+    opacity: 0; }
   100% {
-    transform: rotate(0deg);
-    opacity: 1;
-    left: 0rem; } }
+    transform: translate3d(0rem, 0, 0) rotate(0deg);
+    opacity: 1; } }
 
 @keyframes FadeInLeftToRight {
   0% {
@@ -3497,6 +3493,20 @@ body.loaded .screen__footer {
       .social-block__link--vk svg {
         width: 10px;
         height: 10px; } }
+
+.animated-text .animated-text__word {
+  overflow: hidden;
+  max-height: 1em;
+  display: inline-block;
+  white-space: nowrap; }
+  .animated-text .animated-text__word > span {
+    transform: translate3d(0, 1em, 0);
+    display: inline-block;
+    vertical-align: sub;
+    letter-spacing: initial; }
+
+.animated-text.active .animated-text__word > span {
+  transform: translate3d(0, 0em, 0); }
 
 
 /*# sourceMappingURL=style.min.css.map*/
